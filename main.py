@@ -1,6 +1,6 @@
 import io
 from typing import Optional
-import openai
+
 import requests
 import streamlit as st
 from app.api.conversations import Conversations
