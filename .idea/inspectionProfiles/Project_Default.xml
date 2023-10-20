@@ -1,0 +1,38 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="PIL" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E305" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="compoundinterestgui._name_" />
+          <option value="tensorflow.keras" />
+          <option value="keras.layers.Dense" />
+          <option value="keras.layers.*" />
+          <option value="keras.preprocessing.image.load_img" />
+          <option value="keras.preprocessing.image.*" />
+          <option value="keras.utils.*" />
+          <option value="speech_recognition" />
+          <option value="tensorflow" />
+          <option value="sklearn.preprocessing.tree" />
+          <option value="DecisionTreeclassifier" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
