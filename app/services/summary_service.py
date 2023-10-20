@@ -9,7 +9,7 @@ from app.api.conversations import Conversations
 
 
 @st.cache_resource
-def set_openai_api_key(API_KEY: Optional[str] ="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"
+def set_openai_api_key(API_KEY: Optional[str] ="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"
  ):
 
     if 'OPENAI_API_KEY' in os.environ:
