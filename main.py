@@ -4,31 +4,17 @@ from typing import Optional
 import requests
 import streamlit as st
 from app.api.conversations import Conversations
-from app.services.summary_service import continue_conversation, set_openai_api_key
+#from app.services.summary_service import continue_conversation, set_openai_api_key
 from app.api.conversations import Message as chat_message
 
 
-@st.cache_resource
-def handle_pdf_upload(pdf_file: io.BytesIO) -> Optional[Conversations]:
-    if pdf_file is not None:
-        files = {"pdf_file": pdf_file.getvalue()}
-        response = requests.post("http://localhost:8001/upload_pdf/", files=files)
-        response.raise_for_status()
 
-        messages = response.json()["conversations"]["messages"]
-        conversations = Conversations()
-
-        for m in messages:
-            conversations.add_message(m['role'], m['content'])
-
-        return conversations
-    return None
 
 def main():
     st.title("PDF Summarizer")
 
     API_KEY = st.text_input("Type your OPENAI_API_KEY here",type="password", key="api_key",help="You can get api_key at https://platform.openai.com/account/api-keys")
-    set_openai_api_key(API_KEY)
+    #set_openai_api_key(API_KEY)
 
 
     if "conversations" not in st.session_state:
