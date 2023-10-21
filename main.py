@@ -11,7 +11,7 @@ from app.api.conversations import Message as chat_message
 
 
 def main():
-    st.title("PDF Summarizer")
+    st.title("Legal Summarizer")
 
     API_KEY = st.text_input("Type your OPENAI_API_KEY here",type="password", key="api_key",help="You can get api_key at https://platform.openai.com/account/api-keys")
     #set_openai_api_key(API_KEY)
