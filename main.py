@@ -27,11 +27,11 @@ def main():
 
     pdf_file = st.file_uploader("Upload a PDF file", type="pdf")
 
-    if pdf_file is not None and st.session_state.uploaded is False:
-        print("handle_pdf_upload")
+    #if pdf_file is not None and st.session_state.uploaded is False:
+       # print("handle_pdf_upload")
         #conversations = handle_pdf_upload(pdf_file)
-        st.session_state.uploaded = True
-        st.session_state.conversations = conversations
+        #st.session_state.uploaded = True
+        #st.session_state.conversations = conversations
     with st.form(key='form_parameters'):
         sepal_length = st.slider('Sepal Length', 4.0, 8.0, 4.0)
         sepal_width = st.slider('Sepal Width', 2.0, 4.5, 2.0)
