@@ -1,7 +1,6 @@
 import io
 from typing import Optional
-import pandas as pd
-import pickle
+
 import requests
 import streamlit as st
 from app.api.conversations import Conversations
@@ -27,31 +26,12 @@ def main():
 
     pdf_file = st.file_uploader("Upload a PDF file", type="pdf")
 
-    #if pdf_file is not None and st.session_state.uploaded is False:
-       # print("handle_pdf_upload")
-        #conversations = handle_pdf_upload(pdf_file)
-        #st.session_state.uploaded = True
-        #st.session_state.conversations = conversations
-    with st.form(key='form_parameters'):
-        sepal_length = st.slider('Sepal Length', 4.0, 8.0, 4.0)
-        sepal_width = st.slider('Sepal Width', 2.0, 4.5, 2.0)
-        petal_length = st.slider('Petal Length', 1.0, 7.0, 1.0)
-        petal_width = st.slider('Petal Width', 0.1, 2.5, 0.1)
-        st.markdown('---')
-        submitted = st.form_submit_button('Predict')
-    # Data Inference
-    data_inf = {
-        'sepal.length': sepal_length,
-        'sepal.width': sepal_width,
-        'petal.length': petal_length,
-        'petal.width': petal_width
-    }
-    data_inf = pd.DataFrame([data_inf])
-
-        # Predict using Logistic Regression
-    y_pred_inf = model.predict(data_inf)
-    st.write("pdf summarization" + str(y_pred_inf))
-
+    if pdf_file is not None and st.session_state.uploaded is False:
+        print("handle_pdf_upload")
+        conversations = handle_pdf_upload(pdf_file)
+        st.session_state.uploaded = True
+        st.session_state.conversations = conversations
+    
     question = st.text_input("Type your question here")
 
     if st.button("Ask", key="ask_button"):
