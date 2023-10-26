@@ -28,7 +28,7 @@ def main():
 
     if pdf_file is not None and st.session_state.uploaded is False:
         print("handle_pdf_upload")
-        conversations = handle_pdf_upload(pdf_file)
+        #conversations = handle_pdf_upload(pdf_file)
         st.session_state.uploaded = True
         st.session_state.conversations = conversations
     
